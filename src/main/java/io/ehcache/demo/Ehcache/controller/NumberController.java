@@ -20,9 +20,8 @@ public class NumberController {
 
 
     @GetMapping("/square/{number}")
-    public String getSquare(@PathVariable("number") String number){
-        long temp = Long.parseLong(number);
-        log.info("Calling NumberService to get the square of number {}", temp);
-        return String.format("{\"square\": %s}", numberService.square(temp));
+    public String getSquare(@PathVariable("number") Long number){
+        log.info("Calling NumberService to get the square of number {}", number);
+        return String.format("{\"square\": %s}", numberService.square(number));
     }
 }
